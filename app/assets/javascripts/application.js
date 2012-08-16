@@ -38,17 +38,42 @@
    
 }
 
-   $.cookie("example", "foo");
+   //$.cookie("example", null);
+
 
    function buildSitesListCookies(){
    			var cookies = get_cookies_array();
+
    			var li_list = "";
 			for(var name in cookies) {
-  			 li_list +="<li class='site_item' data-cookie='"+ cookies[name]+ "' >" + name  + "</li>";
+  			 li_list +="<li class='site_item' data-cookie='"+ cookies[name]+ "' >" + name  + "<a class='close'href='#'>x</a></li>";
 		}
 		return li_list;
    }
     $("#siteList").append(buildSitesListCookies());
-    
+
+
+    $('.close').live('click',function(){
+    	var data = $(this).parent().attr('data-cookie');
+    	 $.cookie(data, null);
+    	 $("#siteList li").remove();
+    	 $("#siteList").append(buildSitesListCookies());
+    });
+
+    $('.site_item').live('click', function(){
+    	var url = $(this).text();
+    	url = url.substring(0,url.length - 1)
+    	console.log(url);
+    	$("#theiframe").attr('src',"http://" + url);
+    });
+
+    $("#addButton").click(function(){
+    	var url = $("#inputAdd").val();
+    	if(url !== ""){
+    		$.cookie(url, url);
+    		$("#siteList li").remove();
+    		$("#siteList").append(buildSitesListCookies());
+    	}
+    })
 
  });
