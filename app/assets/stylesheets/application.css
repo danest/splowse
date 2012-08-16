@@ -546,11 +546,12 @@ body {
 ul#nav {
 	list-style: none;
 	float: left;
-}
+	margin-top: 10px;
+}	
 
 ul#nav li {
 	float:left;
-	margin-left: 50px;
+	margin-left: 80px;
 }
 
 #sitesbar{
@@ -609,3 +610,11 @@ li.site_item {
 	padding-left: 0;
 	list-style: none;
 }
+
+li.site_item:hover{
+	background-color:#ccc;
+}
+
+
+
+
