@@ -553,7 +553,10 @@ ul#nav li {
 	float:left;
 	margin-left: 80px;
 }
-
+.noncenter{
+    margin-left:50px;
+    margin-right: 50px;
+}
 #sitesbar{
 	width: 135px;
 	border-right: 2px solid black;
@@ -566,7 +569,6 @@ ul#nav li {
 	text-align: center;
 }
 #content {
-	width: 679px;
 	border-right: 2px solid black;
 	float:left;
 	height: 100%;
