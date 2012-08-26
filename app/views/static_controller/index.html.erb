@@ -1,4 +1,82 @@
-<div class="center">
+
+<script>
+
+ $(document).ready(function() {
+
+ 	$("#plus").click(function(){
+   		console.log('click');
+   		$(".addsitesinput").toggle();
+   });
+
+ 	function get_cookies_array() {
+
+    var cookies = { };
+
+    if (document.cookie && document.cookie != '') {
+        var split = document.cookie.split(';');
+        console.log(split);
+        for (var i = 0; i < split.length; i++) {
+            var name_value = split[i].split("=-");
+            //console.log("name_value " + name_value[0]);
+            if(name_value[1] !== undefined){
+              console.log('here');
+              name_value[0] = name_value[0].replace(/^ /, '');
+              cookies[decodeURIComponent(name_value[0])] = decodeURIComponent(name_value[1]);
+            }
+
+        }
+    }
+
+    return cookies;
+
+}
+  console.log(get_cookies_array());
+
+   //$.cookie("example", null);
+
+
+   function buildSitesListCookies(){
+   			var cookies = get_cookies_array();
+
+   			var li_list = "";
+			for(var name in cookies) {
+  			 li_list +="<li class='site_item' data-cookie='"+ cookies[name]+ "' ><a class='close'href='#' data-cookie='"+ cookies[name]+ "'>x </a>" + name  + "</li>";
+		}
+		return li_list;
+   }
+    $("#siteList").append(buildSitesListCookies());
+
+
+    $('a.close').live('click',function(){
+      console.log("a.close");
+    	var data = $(this).attr('data-cookie');
+      console.log(data);
+    	 $.cookie(data, null);
+    	 $("#siteList li").remove();
+    	 $("#siteList").append(buildSitesListCookies());
+    });
+
+    $('.site_item').live('click', function(){
+    	var url = $(this).text();
+    	url = url.substring(2,url.length);
+    	console.log(url);
+    	$("#theiframe").attr('src',"http://" + url);
+    });
+
+    $("#addButton").click(function(){
+    	var url = $("#inputAdd").val();
+    	if(url !== ""){
+    		$.cookie(url, "-"+url);
+    		$("#siteList li").remove();
+    		$("#siteList").append(buildSitesListCookies());
+    	}
+    })
+
+ });
+
+</script>
+
+<div class="notcenter">
 	<div id="sitesbar">
 		<div id="addSites">
 			<h2>My Sites</h2>
@@ -14,7 +92,7 @@
 		</div>
 	</div>
 	<div id="content">
-		<iframe id="theiframe" width="675px" height="1000px" frameBorder="0" src="http://www.apple.com"></iframe>
+		<iframe id="theiframe" width="1024px" height="100%" frameBorder="0" src="http://www.apple.com"></iframe>
 	</div>
 	<div id="feed">
 		<div id="feeds">
@@ -22,3 +100,4 @@
 		</div>
 	</div>
 </div>
+
