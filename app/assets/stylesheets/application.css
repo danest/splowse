@@ -547,7 +547,7 @@ ul#nav {
 	list-style: none;
 	float: left;
 	margin-top: 10px;
-}	
+}
 
 ul#nav li {
 	float:left;
@@ -574,7 +574,7 @@ ul#nav li {
 
 #feed {
 	width: 135px;
-	float:left;
+	float:right;
 	height: 100%;
 }
 
