@@ -559,17 +559,17 @@ ul#nav li {
 }
 #sitesbar{
 	width: 135px;
-	border-right: 2px solid black;
+	border-right: 2px solid #1c3e69;
 	float:left;
 	height: 100%;
 	min-height: 1000px;
 }
 #addSites h2 {
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #1c3e69;
 	text-align: center;
 }
 #content {
-	border-right: 2px solid black;
+	border-right: 2px solid #1c3e69;
 	float:left;
 	height: 100%;
 }
@@ -581,7 +581,7 @@ ul#nav li {
 }
 
 #feeds h2{
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #1c3e69;
 	text-align: center;
 }
 
