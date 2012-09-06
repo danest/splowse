@@ -1,6 +1,14 @@
 ---
-headerbg.png: headerbg-fbc3e63bf23326f9146d71da8e7fc38b.png
-plus.png: plus-ac71e5568900ba5533b842eedacb2cc9.png
-rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
-application.js: application-323ea3efd831fee1e419421cd099a566.js
-application.css: application-6da820c23e69ffa80190897f1a056f7c.css
+apple.png: apple-39e6d55152d0b081f4a480cd1c2374d6.png
+bgr.png: bgr-9eeea9a7d2f1cbe8c4d76824a6f56750.png
+engadget.png: engadget-d6558ae430e7f090970cdceb8d6c201f.png
+espn.png: espn-159788e61045b39964bb08ea02bec951.png
+headerbg.png: headerbg-3e61ae3f7ed452cd2104e31b8a40eb53.png
+nba.png: nba-d8ff44ee6f62f0af52f9f9a093d6f79b.png
+nyt.png: nyt-243ac6f66efc237e22acb111b5c83b66.png
+plus.png: plus-3ca82bdd86fc1cdc77e8bc0b0513cf24.png
+rails.png: rails-76d54946f77a21b0eeeb99d5b8e58955.png
+techcrunch.png: techcrunch-c72ce7c439f1220e56cce709df980816.png
+theverge.png: theverge-e8cc7c2a8a542b7d00178916166519ff.png
+application.js: application-d5f2719c6c31c100b3ca56d1a6e341ec.js
+application.css: application-d6fd80e6e256b09c97f87ec7a41989d5.css

@@ -7,6 +7,40 @@
    		$(".addsitesinput").toggle();
    });
 
+  function set_images () {
+    var listItems = $("#siteList li");
+    console.log(listItems);
+    listItems.each(function(idx, li) {
+    var product = $(li);
+    var data = $(this).attr('data-cookie');
+    if(data === "nba.com"){
+      product.attr('id', 'nba');
+    }
+    if(data === "espn.com"){
+      product.attr('id', 'espn');
+    }
+    if(data === "apple.com"){
+      product.attr('id', 'apple');
+    }
+    if(data === "engadget.com"){
+      product.attr('id', 'engadget');
+    }
+    if(data === "nytimes.com"){
+      product.attr('id', 'nyt');
+    }
+    if(data === "techcrunch.com"){
+      product.attr('id', 'tc');
+    }
+    if(data === "theverge.com"){
+      product.attr('id', 'theverge');
+    }
+    if(data === "bgr.com"){
+      product.attr('id', 'bgr');
+    }
+    // and the rest of your code
+    console.log(product + "product in list");
+    });
+  }
  	function get_cookies_array() {
 
     var cookies = { };
@@ -39,7 +73,7 @@
 
    			var li_list = "";
 			for(var name in cookies) {
-  			 li_list +="<li class='site_item' data-cookie='"+ cookies[name]+ "' ><a class='close'href='#' data-cookie='"+ cookies[name]+ "'>x </a>" + name  + "</li>";
+  			 li_list +="<li class='site_item' data-cookie='"+ cookies[name]+ "' ><a class='close' href='#' data-cookie='"+ cookies[name]+ "'>x </a>" + name  + "</li>";
 		}
 		return li_list;
    }
@@ -53,6 +87,7 @@
     	 $.cookie(data, null);
     	 $("#siteList li").remove();
     	 $("#siteList").append(buildSitesListCookies());
+        set_images();
     });
 
     $('.site_item').live('click', function(){
@@ -68,8 +103,27 @@
     		$.cookie(url, "-"+url);
     		$("#siteList li").remove();
     		$("#siteList").append(buildSitesListCookies());
+        set_images();
+        $(".addsitesinput").toggle();
     	}
     })
+
+    set_images();
+
+    function buildSitesListCookies_M(){
+        var cookies = get_cookies_array();
+
+        var li_list = "";
+      for(var name in cookies) {
+         li_list +="<li class='site_item_manage' data-cookie='"+ cookies[name]+ "' ><a class='close' href='#' data-cookie='"+ cookies[name]+ "'>x </a>" + name  + "</li>";
+    }
+    return li_list;
+   }
+
+   $("#siteListManage").append(buildSitesListCookies_M).toggle();
+   $("#manage_sites").click(function(){
+    $("#siteListManage").toggle();
+   });
 
  });
 
@@ -88,6 +142,9 @@
 		<div id="addedSites">
 			<ul id="siteList">
 			</ul>
+      <a href="#" title="" id="manage_sites">Manage Sites</a>
+      <ul id="siteListManage">
+      </ul>
 		</div>
 	</div>
 	<div id="content">

@@ -517,6 +517,7 @@ body {
     width: 100%;
     padding: 0;
     font-family: helvetica;
+    position: fixed;
 }
 
 .clear {
@@ -617,6 +618,61 @@ li.site_item:hover{
 	background-color:#ccc;
 }
 
-
+#nba {
+    background:url(nba.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
+#tc {
+    background:url(techcrunch.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
+#espn {
+    background:url(espn.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
+#apple {
+    background:url(apple.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
+#theverge {
+    background:url(theverge.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
+#engadget {
+    background:url(engadget.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
+#bgr {
+    background:url(bgr.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
+#nba {
+    background:url(nba.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
 
 
