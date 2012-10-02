@@ -3,9 +3,16 @@
  $(document).ready(function() {
 
  	$("#plus").click(function(){
-   		console.log('click');
-   		$(".addsitesinput").toggle();
+      $(".addsitesinput").toggle();
+   		$("#inputAdd").focus();
+      console.log('focus on input add');
    });
+
+  $("#inputAdd").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#addButton").click();
+    }
+});
 
   function set_images () {
     var listItems = $("#siteList li");
@@ -93,7 +100,6 @@
     $('.site_item').live('click', function(){
     	var url = $(this).text();
     	url = url.substring(2,url.length);
-    	console.log(url);
     	$("#theiframe").attr('src',"http://" + url);
     });
 
@@ -106,7 +112,9 @@
         set_images();
         $("#inputAdd").val("");
         $(".addsitesinput").toggle();
-    	}
+        $("#theiframe").attr('src',"http://" + url);
+    	 }
+        console.log(url);
     })
 
     set_images();
