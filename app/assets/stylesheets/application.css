@@ -559,7 +559,7 @@ ul#nav li {
     margin: 0 auto;
 }
 #sitesbar{
-	width: 150px;
+	width: 170px;
 	border-right: 2px solid #1c3e69;
 	float:left;
 	height: 100%;
@@ -590,23 +590,22 @@ ul#nav li {
 	display: none;
 }
 #plus {
-	text-align: center;
 	background: url(plus.png) no-repeat;
 	text-indent: -9999px;
 	height: 22px;
 	display: block;
 	width: 20px;
 	font-size: 30px;
-	margin-left: 50px;
+	margin: 0 auto;
 }
 
 #inputAdd {
-	width: 128px;
+	width: 164px;
 }
 
 #siteList{
 	padding: 0;
-    width: 185px;
+    width: 200px;
 }
 
 li.site_item {
@@ -695,11 +694,7 @@ a.close {
     float: left;
     position: relative;
     top:12px;
+    margin-right: 5px;
     visibility: hidden;
 }
-
-#siteList:hover a.close {
-    visibility: visible;
-}
-
 

@@ -126,5 +126,14 @@
       buildSitesListCookies();
       set_images();
 
+      $("li.site_item").hover(function(){
+        console.log($(this).prev());
+        $(this).prev().css('visibility', 'visible');
+      }, function(){
+        $(this).prev().css('visibility', 'hidden');
+      });
+
+
+
 
  });
