@@ -18,30 +18,9 @@
       listItems.each(function(idx, li) {
       var product = $(li);
       var data = $(this).attr('data-cookie');
-      if(data === "nba.com"){
-        product.attr('id', 'nba');
-      }
-      if(data === "espn.com"){
-        product.attr('id', 'espn');
-      }
-      if(data === "apple.com"){
-        product.attr('id', 'apple');
-      }
-      if(data === "engadget.com"){
-        product.attr('id', 'engadget');
-      }
-      if(data === "nytimes.com"){
-        product.attr('id', 'nyt');
-      }
-      if(data === "techcrunch.com"){
-        product.attr('id', 'tc');
-      }
-      if(data === "theverge.com"){
-        product.attr('id', 'theverge');
-      }
-      if(data === "bgr.com"){
-        product.attr('id', 'bgr');
-      }
+        var url = data.substring(0,(data.length-4));
+        console.log(url);
+        product.addClass('logo_image').css("background", "url(assets/"+url+".png) no-repeat");
       // and the rest of your code
       //console.log(product + "product in list");
       });
@@ -78,13 +57,13 @@
         for(var name in cookies) {
           var $item = $('.site_item_first').clone();
           //console.log($item, 'item clone');
-          var a = "<a href='#' class='close'></a>";
+          var a = "<span class='close'><span></span></span>";
           var clear = "<div class='clear'></div>";
           //console.log($a)
           $item.html(cookies[name]);
           $item.attr('data-cookie', cookies[name] );
           $item.removeClass('hide site_item_first').addClass('site_item');
-          $('#siteList').append($item);
+          $('#siteList').prepend($item);
           $item.before(a);
           $item.after(clear);
         }
@@ -97,7 +76,7 @@
         //console.log(data);
       	 $.cookie(data, null);
       	 $("#siteList li.site_item").remove();
-         $("a.close").remove();
+         $(".close").remove();
       	 buildSitesListCookies();
          set_images();
       });
@@ -114,7 +93,7 @@
       	if(url !== ""){
       		$.cookie(url, "-"+url);
       		$("#siteList li.site_item").remove();
-          $("a.close").remove();
+          $(".close").remove();
       		buildSitesListCookies();
           set_images();
           $("#inputAdd").val("");
@@ -126,12 +105,13 @@
       buildSitesListCookies();
       set_images();
 
-      $("li.site_item").hover(function(){
-        console.log($(this).prev());
-        $(this).prev().css('visibility', 'visible');
-      }, function(){
-        $(this).prev().css('visibility', 'hidden');
-      });
+      // $("a.close").hover(function(){
+      //   console.log($(this);
+      //   //$(this).prev().css('visibility', 'visible');
+      // }, function(){
+      //   //$(this).prev().css('visibility', 'hidden');
+      // });
+
 
 
 

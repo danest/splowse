@@ -685,7 +685,22 @@ li.site_item:hover a.close {
     height: 40px;
 }
 
-a.close {
+.logo_image {
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}
+
+.close {
+    height: 30px;
+    width: 21px;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+
+.close span {
     display: block;
     background: url(close.png) no-repeat;
     text-indent: -9999px;
@@ -696,5 +711,12 @@ a.close {
     top:12px;
     margin-right: 5px;
     visibility: hidden;
+    cursor: pointer;
+}
+
+
+.close:hover span {
+    visibility: visible;
+    cursor: pointer;
 }
 
