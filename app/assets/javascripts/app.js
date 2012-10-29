@@ -69,7 +69,7 @@
         }
      }
 
-      $('a.close').live('click',function(e){
+      $('span.close').live('click',function(e){
         //console.log("a.close");
         e.stopPropagation();
       	var data = $(this).next().attr('data-cookie');
