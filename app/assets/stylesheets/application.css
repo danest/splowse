@@ -559,7 +559,7 @@ ul#nav li {
     margin: 0 auto;
 }
 #sitesbar{
-	width: 135px;
+	width: 150px;
 	border-right: 2px solid #1c3e69;
 	float:left;
 	height: 100%;
@@ -586,10 +586,10 @@ ul#nav li {
 	text-align: center;
 }
 
-.hide{
+.hide {
 	display: none;
 }
-#plus{
+#plus {
 	text-align: center;
 	background: url(plus.png) no-repeat;
 	text-indent: -9999px;
@@ -600,24 +600,34 @@ ul#nav li {
 	margin-left: 50px;
 }
 
-#inputAdd{
+#inputAdd {
 	width: 128px;
 }
 
 #siteList{
 	padding: 0;
+    width: 185px;
 }
 
 li.site_item {
-	padding-bottom: 10px;
-	padding-left: 0;
+	padding-left: 35px;
 	list-style: none;
     cursor: pointer;
+    height: 50px;
+    width: 125px;
+    line-height: 50px;
+    position: relative;
+    float: left;
 }
 
-li.site_item:hover{
-	background-color:#ccc;
+li.site_item:hover {
+
 }
+
+li.site_item:hover a.close {
+    visibility: visible;
+}
+
 
 #nba {
     background:url(nba.png) no-repeat;
@@ -674,6 +684,22 @@ li.site_item:hover{
     text-indent: -9999px;
     width: 125px;
     height: 40px;
+}
+
+a.close {
+    display: block;
+    background: url(close.png) no-repeat;
+    text-indent: -9999px;
+    height: 30px;
+    width: 21px;
+    float: left;
+    position: relative;
+    top:12px;
+    visibility: hidden;
+}
+
+#siteList:hover a.close {
+    visibility: visible;
 }
 
 
