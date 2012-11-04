@@ -144,7 +144,7 @@
         console.log('submit...');
         var query = $("#gsText").val();
         console.log(query);
-        $("#search-results").gSearch({search_text : query});
+        $("#search-results").gSearch({search_text : query, count: 8});
       })
 
       // $("#gsSubmit").click(function(){
