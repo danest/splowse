@@ -12,18 +12,39 @@
       }
     });
 
+    function checkExists(imageUrl, callback) {
+      var img = new Image();
+
+      img.onerror = function() {
+          callback(false);
+      };
+
+      img.onload = function() {
+          callback(true);
+      };
+
+      img.src = imageUrl;
+    }
+
+    function switchBetweenSearchAndSites() {
+        $(".google-search-container").addClass('hide');
+        $(".iframe-container").removeClass('hide');
+    }
+
     function set_images () {
       var listItems = $("#siteList li");
       //console.log(listItems);
       listItems.each(function(idx, li) {
       var product = $(li);
       var data = $(this).attr('data-cookie');
-        var url = data.substring(0,(data.length-4));
-        console.log(url);
-        product.addClass('logo_image').css("background", "url(assets/"+url+".png) no-repeat");
-      // and the rest of your code
-      //console.log(product + "product in list");
+      var url = data.substring(0,(data.length-4));
+
+      checkExists('assets/'+url+'.png', function(exists) {
+        if(exists) {
+          product.addClass('logo_image').css("background", "url(assets/"+url+".png) no-repeat");
+        }
       });
+    });
     }
    	function get_cookies_array() {
 
@@ -36,7 +57,6 @@
               var name_value = split[i].split("=-");
               //console.log("name_value " + name_value[0]);
               if(name_value[1] !== undefined){
-                console.log('here');
                 name_value[0] = name_value[0].replace(/^ /, '');
                 cookies[decodeURIComponent(name_value[0])] = decodeURIComponent(name_value[1]);
               }
@@ -84,6 +104,7 @@
       $('.site_item').live('click', function(){
       	var url = $(this).text();
       	//url = url.substring(2,url.length);
+        switchBetweenSearchAndSites();
       	$("#theiframe").attr('src',"http://" + url);
       });
 
@@ -97,6 +118,7 @@
       		buildSitesListCookies();
           set_images();
           $("#inputAdd").val("");
+          switchBetweenSearchAndSites();
           $("#theiframe").attr('src',"http://" + url);
       	 }
           //console.log(url);
@@ -111,9 +133,25 @@
       // }, function(){
       //   //$(this).prev().css('visibility', 'hidden');
       // });
+      $("#gsText").keyup(function(event){
+        if(event.keyCode == 13){
+            $("input#gsSubmit").click();
+        }
+      });
 
+      $("input#gsSubmit").click(function(e){
+        e.preventDefault();
+        console.log('submit...');
+        var query = $("#gsText").val();
+        console.log(query);
+        $("#search-results").gSearch({search_text : query});
+      })
 
-
-
+      // $("#gsSubmit").click(function(){
+      //   console.log('submit...');
+      //   var query = $("#gsText").val();
+      //   console.log(query);
+      //   $("#search-results").gSearch({search_text : val});
+      // })
 
  });

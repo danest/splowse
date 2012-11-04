@@ -4,6 +4,8 @@
   <title>Splowse</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+  <script type="text/javascript">google.load("search", "1");</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,9 +14,6 @@
 	<%= yield %>
 	<div class="clear"></div>
 	<div id="footer">
-		<p>
-			Something goes here
-		</p>
 	</div>
 </body>
 </html>

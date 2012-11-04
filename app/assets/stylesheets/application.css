@@ -517,7 +517,6 @@ body {
     width: 100%;
     padding: 0;
     font-family: helvetica;
-    position: fixed;
 }
 
 .clear {
@@ -534,13 +533,25 @@ body {
 	width: 100%;
 	height: 78px;
 	color: #fff;
+    position: fixed;
+    z-index: 5;
 }
+
+#header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#header a:hover {
+    text-decoration: underline;
+}
+
 #top{
 	padding-top: 15px;
 }
 #logo {
 	margin: 0;
-	width: 50px;
+	width: 150px;
 	float: left;
 }
 
@@ -548,6 +559,9 @@ ul#nav {
 	list-style: none;
 	float: left;
 	margin-top: 10px;
+}
+ul#nav li:first-child {
+    margin-left: 0;
 }
 
 ul#nav li {
@@ -557,26 +571,36 @@ ul#nav li {
 .notcenter{
     width: 1298px;
     margin: 0 auto;
+    padding-top:77px;
 }
 #sitesbar{
 	width: 170px;
-	border-right: 2px solid #1c3e69;
 	float:left;
-	height: 100%;
-	min-height: 1200px;
+	height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 #addSites h2 {
-	border-bottom: 2px solid #1c3e69;
-	text-align: center;
+	float:left;
+}
+
+.addSitesHeader {
+    border-bottom: 2px solid #1c3e69;
+}
+
+.addSitesHeader a {
+    float: left;
 }
 #content {
 	border-right: 2px solid #1c3e69;
+    border-left: 2px solid #1c3e69;
 	float:left;
 	height: 100%;
+    width: 1024px;
 }
 
 #feed {
-	width: 135px;
+	width: 100px;
 	float:right;
 	height: 100%;
 }
@@ -596,11 +620,17 @@ ul#nav li {
 	display: block;
 	width: 20px;
 	font-size: 30px;
-	margin: 0 auto;
+	margin-top: 23px;
+    margin-left: 10px
+
+}
+
+.addsitesinput {
+    padding: 5px;
 }
 
 #inputAdd {
-	width: 164px;
+	width: 150px;
 }
 
 #siteList{
@@ -693,7 +723,7 @@ li.site_item:hover a.close {
 }
 
 .close {
-    height: 30px;
+    height: 50px;
     width: 21px;
     display: block;
     float: left;
@@ -704,7 +734,7 @@ li.site_item:hover a.close {
     display: block;
     background: url(close.png) no-repeat;
     text-indent: -9999px;
-    height: 30px;
+    height: 50px;
     width: 21px;
     float: left;
     position: relative;
@@ -720,3 +750,75 @@ li.site_item:hover a.close {
     cursor: pointer;
 }
 
+.widget-container {
+    height: 70px;
+    background-color: whiteSmoke;
+}
+
+.iframe-container {
+    margin-top: 10px;
+}
+.google-search-container {
+    height: 500px;
+}
+.google-search-header {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.search-results {
+    padding: 5px;
+    width: 537px;
+    height: 500px;
+    border: 1px solid #777;
+}
+
+.google-search-results {
+    font-size: 13px;
+    font-family: Tahoma, Geneva, sans-serif;
+    line-height: 1.5;
+    padding-left: 20px;
+}
+.google-search-results .result {
+    margin: 0 0 20px 0;
+}
+.google-search-results a {
+    color: #1111cc;
+    text-decoration: underline;
+}
+.google-search-results .result .title {
+    font-size: 1.1em;
+}
+.google-search-results .result .url-cache span {
+    color:#282;
+}
+.google-search-results .result .url-cache a {
+    color: #4272db;
+    text-decoration: none;
+}
+.google-search-results .pagination ul {
+    list-style: none;
+    background: none;
+}
+.google-search-results .pagination ul li {
+    list-style: none;
+    background: none;
+    padding: 0;
+    display: inline;
+    margin: 0 5px;
+}
+.google-search-results .pagination ul li a {
+    text-decoration: none;
+}
+.google-search-results .pagination ul li.selected a {
+    color: #000;
+    font-weight: bold;
+}
+.google-search-results .pagination ul li.prev-next a {
+    font-weight: bold;
+}
+
+#theiframe {
+    width: 1023px;
+    border: 0;
+}

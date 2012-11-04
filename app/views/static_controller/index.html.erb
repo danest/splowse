@@ -1,29 +1,44 @@
 <div class="notcenter">
 <div id="sitesbar">
 	<div id="addSites">
-		<h2>My Sites</h2>
-	    <p ><a href="#" title="+" id="plus"></a></p>
+		<div class="addSitesHeader">
+			<h2>My Sites</h2>
+			<a href="#" title="+" id="plus"></a>
+			<div class="clear"></div>
+		</div><div class="clear"></div>
 	    <div class="addsitesinput hide">
-	    	<p><input id="inputAdd" type="text" placeholder="Enter a Url www.google.com" /></p>
+	    <p>
+	    	<input id="inputAdd" type="text" placeholder="Enter a Url www.google.com" />
+	    </p>
 	    <button id="addButton">Add</button>
-	    </div>
+	</div>
 	</div>
 	<div id="addedSites">
 		<ul id="siteList">
-      <li class='site_item_first hide' data-cookie='sample-cookie'>
-      </li>
+      		<li class='site_item_first hide' data-cookie='sample-cookie'></li>
 		</ul>
-<!--     <a href="#" title="" id="manage_sites">Manage Sites</a>
-    <ul id="siteListManage">
-    </ul> -->
 	</div>
 </div>
 <div id="content">
-	<iframe id="theiframe" width="1024px" height="100%" style="height: 820px;" frameBorder="0" src="http://www.apple.com"></iframe>
+	<div class="widget-container">
+
+	</div>
+	<div class="iframe-container hide">
+		<iframe id="theiframe" width="1024px" height="100%" style="height: 500px;" frameBorder="0" src=""></iframe>
+	</div>
+	<div class="google-search-container">
+		<div class="google-search-header">
+			<h3>Search Google</h3>
+			<input id="gsText" type="text" name="gs" placeholder="Search Google.com">
+			<input id="gsSubmit" type="submit" value="Submit">
+		</div>
+		<div id="search-results"></div>
+	</div>
+
 </div>
 <div id="feed">
 	<div id="feeds">
 		<h2>Feed</h2>
 	</div>
-</div>
-</div>
+</div><div class="clear"></div>
+</div><div class="clear"></div>
