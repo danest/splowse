@@ -104,13 +104,19 @@
       	var url = $(this).text();
       	//url = url.substring(2,url.length);
         switchBetweenSearchAndSites();
+        if(url == "google.com"){
+          window.location.href = "/";
+        }
+
       	$("#theiframe").attr('src',"http://" + url);
       });
 
       $("#addButton").click(function(){
       	var url = $("#inputAdd").val();
-        console.log(url);
-      	if(url !== ""){
+        if(url == "google.com"){
+          $.cookie("/", "-"+"google.com");
+          window.location.href = "/";
+        } else if(url !== ""){
       		$.cookie(url, "-"+url);
       		$("#siteList li.site_item").remove();
           $(".close").remove();
@@ -118,7 +124,9 @@
           $("#inputAdd").val("");
           switchBetweenSearchAndSites();
           $("#theiframe").attr('src',"http://" + url);
-      	 }
+      	} else {
+          alert("error");
+        }
           //console.log(url);
       });
 
@@ -141,7 +149,7 @@
         console.log('submit...');
         var query = $("#gsText").val();
         console.log(query);
-        $("#search-results").gSearch({search_text : query, count: 8});
+        $("#search-results").gSearch({search_text : query, count: 4});
       })
 
       // $("#gsSubmit").click(function(){
