@@ -8,7 +8,8 @@ gem 'rails', '3.2.5'
 
 
 gem 'pg'
-gem 'thin'
+gem 'unicorn'
+gem 'capistrano'
 
 
 # Gems used only for assets and not required

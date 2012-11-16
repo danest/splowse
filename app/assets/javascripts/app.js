@@ -12,40 +12,40 @@
       }
     });
 
-    function checkExists(imageUrl, callback) {
-      var img = new Image();
+    // function checkExists(imageUrl, callback) {
+    //   var img = new Image();
 
-      img.onerror = function() {
-          callback(false);
-      };
+    //   img.onerror = function() {
+    //       callback(false);
+    //   };
 
-      img.onload = function() {
-          callback(true);
-      };
+    //   img.onload = function() {
+    //       callback(true);
+    //   };
 
-      img.src = imageUrl;
-    }
+    //   img.src = imageUrl;
+    // }
 
     function switchBetweenSearchAndSites() {
         $(".google-search-container").addClass('hide');
         $(".iframe-container").removeClass('hide');
     }
 
-    function set_images () {
-      var listItems = $("#siteList li");
-      //console.log(listItems);
-      listItems.each(function(idx, li) {
-      var product = $(li);
-      var data = $(this).attr('data-cookie');
-      var url = data.substring(0,(data.length-4));
+    // function set_images () {
+    //   var listItems = $("#siteList li");
+    //   //console.log(listItems);
+    //   listItems.each(function(idx, li) {
+    //   var product = $(li);
+    //   var data = $(this).attr('data-cookie');
+    //   var url = data.substring(0,(data.length-4));
 
-      checkExists('assets/'+url+'.png', function(exists) {
-        if(exists) {
-          product.addClass('logo_image').css("background", "url(assets/"+url+".png) no-repeat");
-        }
-      });
-    });
-    }
+    //   checkExists('assets/'+url+'.png', function(exists) {
+    //     if(exists) {
+    //       product.addClass('logo_image').css("background", "url(assets/"+url+".png) no-repeat");
+    //     }
+    //   });
+    // });
+    // }
    	function get_cookies_array() {
 
       var cookies = { };
@@ -98,7 +98,6 @@
       	 $("#siteList li.site_item").remove();
          $(".close").remove();
       	 buildSitesListCookies();
-         set_images();
       });
 
       $('.site_item').live('click', function(){
@@ -116,7 +115,6 @@
       		$("#siteList li.site_item").remove();
           $(".close").remove();
       		buildSitesListCookies();
-          set_images();
           $("#inputAdd").val("");
           switchBetweenSearchAndSites();
           $("#theiframe").attr('src',"http://" + url);
@@ -125,7 +123,6 @@
       });
 
       buildSitesListCookies();
-      set_images();
 
       // $("a.close").hover(function(){
       //   console.log($(this);

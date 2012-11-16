@@ -7,8 +7,8 @@ development:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: radii_development
-  username: <%= ENV["USER"] %>
+  database: splowse_production
+  username: splowse
   password:
   allow_concurrency: true
   pool: 5
@@ -21,8 +21,8 @@ development:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: radii_development
-  username: <%= ENV["USER"] %>
+  database: splowse_production
+  username: splowse
   password:
   allow_concurrency: true
   pool: 5
@@ -32,8 +32,8 @@ test:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: radii_test
-  username: <%= ENV["USER"] %>
+  database: splowse_test
+  username: splowse
   password:
   allow_concurrency: true
   pool: 5

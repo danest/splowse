@@ -639,7 +639,7 @@ ul#nav li {
 }
 
 li.site_item {
-	padding-left: 35px;
+	padding-left: 10px;
 	list-style: none;
     cursor: pointer;
     height: 50px;
@@ -647,6 +647,9 @@ li.site_item {
     line-height: 50px;
     position: relative;
     float: left;
+    font-size: 22px;
+    font-family: Helvetica;
+    color: #2e5a8d;
 }
 
 li.site_item:hover {
@@ -738,7 +741,7 @@ li.site_item:hover a.close {
     width: 21px;
     float: left;
     position: relative;
-    top:12px;
+    top:15px;
     margin-right: 5px;
     visibility: hidden;
     cursor: pointer;
@@ -764,6 +767,8 @@ li.site_item:hover a.close {
 .google-search-header {
     padding-left: 20px;
     padding-bottom: 20px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .search-results {
@@ -816,6 +821,47 @@ li.site_item:hover a.close {
 }
 .google-search-results .pagination ul li.prev-next a {
     font-weight: bold;
+}
+
+#gsSubmit {
+    background-color: whiteSmoke;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(whiteSmoke),to(#F1F1F1));
+    background-image: -webkit-linear-gradient(top,whiteSmoke,#F1F1F1);
+    background-image: -moz-linear-gradient(top,whiteSmoke,#F1F1F1);
+    background-image: -ms-linear-gradient(top,whiteSmoke,#F1F1F1);
+    background-image: -o-linear-gradient(top,whiteSmoke,#F1F1F1);
+    background-image: linear-gradient(top,whiteSmoke,#F1F1F1);
+    border: 1px solid gainsboro;
+    border-color: rgba(0, 0, 0, .1);
+    color: #444 !important;
+    font-size: 11px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: default !important;
+    display: inline-block;
+    font-weight: bold;
+    height: 29px;
+    line-height: 29px;
+    min-width: 54px;
+    padding: 0 8px;
+    text-align: center;
+    text-decoration: none !important;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#gsText {
+    padding: 3px 6px;
+    font: 16px arial,sans-serif;
+    background: white;
+    border: 1px solid #D9D9D9;
+    border-top: 1px solid silver;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    height: 22px;
+    width: 320px;
 }
 
 #theiframe {
